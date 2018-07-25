@@ -3,7 +3,7 @@ let json = {
     "last_name" : "Ivankovic"
 }
 
-let arr_jsons = [
+let arrJsons = [
     {
     "name" : "milos"
     },
@@ -13,29 +13,27 @@ let arr_jsons = [
 ]
 //klaseee
 //Person class
-function Person(first_name, last_name, gender)
+function Person(firstName, lastName, gender)
 {
-    this.first_name = first_name;
-    this.last_name = last_name;
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.gender = gender;
 
-    if(Person.count == undefined){
+    if (Person.count == undefined) {
         Person.count = 1;
-    }
-    else{
-        Person.count ++;
+    } else {
+        Person.count++;
     }
 }
 
-Person.getStatickaPromjenljiva = function()
-{
+Person.getStatickaPromjenljiva = function() {
     return Person.count;
 }
 //Worker class
 
-function Worker(first_name, last_name, gender, title)
+function Worker(firstName, lastName, gender, title)
 {
-    Person.call(this, first_name, last_name, gender);
+    Person.call(this, firstName, lastName, gender);
     this.title = title;
 }
 
@@ -43,26 +41,23 @@ Worker.prototype = Object.create(Person.prototype);
 Worker.prototype.constructor = Worker;
 
 //Test
-let one_person = new Person('Milos', 'Ivankovic', "male");
-console.log(Person.count + " One_person");
+let onePerson = new Person('Milos', 'Ivankovic', "male");
+console.log(Person.count + " One person");
 let worker = new Worker('Ime', 'Prezime', 'male', 'web developer');
 console.log(Person.count + " worker");
 
 
 //promises and callbacks
 
-let promise1 = new Promise(function(resolve, reject)
-{
+let promise1 = new Promise(function(resolve, reject) {
     setTimeout(resolve, 100);
 });
 
-let succesCallback = function()
-{
+let succesCallback = function() {
     console.log('Good');
 };
 
-let errorCallback = function()
-{
+let errorCallback = function() {
     console.log('Bad')
 };
 
