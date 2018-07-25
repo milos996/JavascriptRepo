@@ -47,3 +47,23 @@ let one_person = new Person('Milos', 'Ivankovic', "male");
 console.log(Person.count + " One_person");
 let worker = new Worker('Ime', 'Prezime', 'male', 'web developer');
 console.log(Person.count + " worker");
+
+
+//promises and callbacks
+
+let promise1 = new Promise(function(resolve, reject)
+{
+    setTimeout(resolve, 100);
+});
+
+let succesCallback = function()
+{
+    console.log('Good');
+};
+
+let errorCallback = function()
+{
+    console.log('Bad')
+};
+
+promise1.then(succesCallback, errorCallback);
